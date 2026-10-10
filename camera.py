@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 from typing import Optional, Tuple
 import cv2
 
-
 class Feed:
     @abstractmethod
     def open(self)-> None: ...
