@@ -25,13 +25,13 @@ class Detection:
         return (self.x1 + self.x2) / 2, (self.y1 + self.y2) / 2
 
 
-class Frame:
+class YoloPersonDet:
     """A single image (BGR ndarray, as produced by cv2) with inference helpers."""
 
     _model: Optional[YOLO] = None
 
-    def __init__(self, image: np.ndarray):
-        self.image = image
+    def __init__(self, image: np.ndarray = None):
+        self.image = image if image is not None else np.zeros((480, 640, 3), dtype=np.uint8)
         self._person: Optional[Detection] = None
         self._inferred = False
 

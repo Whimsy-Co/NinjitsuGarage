@@ -1,4 +1,5 @@
 *
+!main.py
 !camera.py
 !inference.py
 !.gitignore
