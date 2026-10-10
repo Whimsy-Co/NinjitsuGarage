@@ -54,6 +54,7 @@ class HostCam(Feed):
             self._cap.set(cv2.CAP_PROP_FRAME_WIDTH, self._res[1])
         if self._fps:
             self._cap.set(cv2.CAP_PROP_FPS, self._fps)
+    
     def read(self)->None:
         ok, frame = self._cap.read()
         return frame if ok else None
@@ -61,6 +62,10 @@ class HostCam(Feed):
     def close(self)->None:
         if self._cap is not None:
             self._cap.release()
+
+    @property
+    def is_open(self)-> bool:
+        return self._cap.isOpened()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,11 @@
 *
 !main.py
-!camera.py
-!inference.py
+!src/
+!src/*.py
+!setup.sh
+!requirements.txt
+!data/
+!data/**
 !.gitignore
 !LICENSE
 !*.md
