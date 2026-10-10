@@ -24,7 +24,7 @@ class Feed:
         self.open()
         return self
 
-    def __exit__(self):
+    def __exit__(self, *args):
         self.close()
         return self
 
@@ -43,7 +43,7 @@ class HostCam(Feed):
         self._source = source
         self._res = resolution
         self._fps = fps
-        self._cap = Optional[cv2.VideoCapture] = None
+        self._cap : Optional[cv2.VideoCapture] = None
 
     def open(self)->None:
         self._cap = cv2.VideoCapture(self._source)
@@ -59,11 +59,11 @@ class HostCam(Feed):
         return frame if ok else None
 
     def close(self)->None:
-        if self.cap is not None:
+        if self._cap is not None:
             self._cap.release()
 
 
-if __name__ == "main":
+if __name__ == "__main__":
 
     # Open the video file
     video = cv2.VideoCapture(0)
