@@ -6,6 +6,8 @@
 !requirements.txt
 !data/
 !data/**
+!testing/ 
+!testing/**
 !.gitignore
 !LICENSE
 !*.md
