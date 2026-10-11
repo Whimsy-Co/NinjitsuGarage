@@ -67,6 +67,10 @@ class HostCam(Feed):
     def is_open(self)-> bool:
         return self._cap.isOpened()
 
+    @property
+    def fps(self)->float:
+        return self._cap.get(cv2.CAP_PROP_FPS)
+
 
 if __name__ == "__main__":
 

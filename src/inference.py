@@ -17,8 +17,8 @@ class Detection:
     confidence: float
 
     @property
-    def xyxy(self) -> Tuple[float, float, float, float]:
-        return self.x1, self.y1, self.x2, self.y2
+    def xyxy(self) -> list[float, float, float, float]:
+        return [self.x1, self.y1, self.x2, self.y2]
 
     @property
     def center(self) -> Tuple[float, float]:
